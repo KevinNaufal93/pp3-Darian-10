@@ -5,8 +5,10 @@ const landingPage = () => {
     return (
         <div>
             <div className="header">
-                <h1> Landing Page </h1>
-                <h6><Link to="/register">Register</Link></h6>
+                <h1> Welcome to Telaga's Website </h1>
+            </div>
+            <div className="body">
+                <h3>Please Register or Log in</h3>
             </div>
         </div>
     )

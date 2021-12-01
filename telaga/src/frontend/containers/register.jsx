@@ -1,19 +1,85 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { connect } from "react-redux";
+import { confirmReg } from "../redux/action/user";  
+import { Redirect, Link } from 'react-router-dom'
+import '../assets/styles/registerPage.css'
 
 class Register extends React.Component {
-    state = []
+
+    state = { 
+        user_id: 0,
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        fullname: "",
+        auth_status: "user",
+    }
     
+    redirectHandler = () => {
+        this.setState({redirect: true})
+    }
+
+    inputHandler = (event) =>{
+        const value = event.target.value;
+        const name = event.target.name;
+        this.setState({ [name]: value })
+    }
+
     render () {
+        const { redirect } = this.state;
+        if(redirect) {
+            return <Redirect to="/"/>
+        }
+        console.log(this.state)
+
         return (
             <div>
-                <div className="header">
-                    <h1> Register Page </h1>
-                    <h6><Link to="/">Home</Link></h6>
+                <div className="pp3__header">REGISTER</div>
+
+                <div className="pp3__form">
+
+                    <div className="pp3__form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" name="username" placeholder="username" onChange={this.inputHandler}/>
+                    </div>
+
+                    <div className="pp3__form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" placeholder="email" onChange={this.inputHandler}/>             
+                    </div>
+
+                    <div className="pp3__form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" placeholder="password" onChange={this.inputHandler}/>              
+                    </div>
+
+                    <div className="pp3__form-group">
+                        <label htmlFor="password">Confirm Password</label>
+                        <input type="password" name="confirmPassword" placeholder="confirm password" onChange={this.inputHandler}/>             
+                    </div>
+
+                    <div className="pp3__form-group">
+                        <label htmlFor="fullname">Full Name</label>
+                        <input type="text" name="fullname" placeholder="full name" onChange={this.inputHandler}/>           
+                    </div>
+                </div>
+                <div className="pp3__button-container">
+                    <button onClick={()=>{this.props.confirmReg(this.state); this.redirectHandler()}}>Register now!</button>
                 </div>
             </div>
         )
     }
 }
 
-export default Register
+const mapStateToProps = (state) => {
+    return {
+        userGlobal: state.user,
+    }
+}
+
+const mapDispatchToProps = {
+    confirmReg,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

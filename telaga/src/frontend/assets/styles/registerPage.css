@@ -1,0 +1,49 @@
+.pp3__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.pp3__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pp3__form-group {
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.pp3__form-group input {
+    height: 30px;
+}
+
+.pp3__form-group label {
+    display: block;
+}
+
+.pp3__button-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.pp3__button-container button {
+    color: #fff;
+    background: #ff4820;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
