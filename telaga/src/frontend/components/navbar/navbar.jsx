@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-    Navbar,
-    Nav,
-    DropdownToggle,
-    UncontrolledDropdown,
-    DropdownMenu,
-    DropdownItem
-} from 'reactstrap';
+
 import {Link} from 'react-router-dom';
 import '../../assets/styles/navbar.css'
 import logo from '../../assets/img/logo.png'

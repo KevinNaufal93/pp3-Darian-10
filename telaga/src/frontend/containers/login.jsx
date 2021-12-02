@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import '../assets/styles/registerPage.css'
 
 class Login extends React.Component {

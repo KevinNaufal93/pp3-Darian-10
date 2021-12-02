@@ -4,15 +4,8 @@ const init_state = {
   fullname: "",
   email: "",
   auth_status: "",
-  user_id: 0,
   errMsg: "",
-  searchProduct:"",
-  pic_location:"",
-  address:"",
-  defAddress:"",
   storageIsChecked:false,
-  cart_id: 0,
-  checkStatusPlaceHolder: ""
 };
 
 const reducer = (state = init_state, action) => {

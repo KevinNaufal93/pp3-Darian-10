@@ -2,6 +2,7 @@ import Axios from "axios";
 import { API_URL } from "../../constants/API";
 
 export const confirmReg = (data) => {
+    console.log(data);
     if(data.password === data.confirmPassword) {
     return (dispatch) => {
       Axios.post(API_URL + "/register/", {

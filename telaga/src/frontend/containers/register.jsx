@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { confirmReg } from "../redux/action/user";  
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import '../assets/styles/registerPage.css'
 
 class Register extends React.Component {
@@ -24,6 +24,7 @@ class Register extends React.Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({ [name]: value })
+        console.log(this.state)
     }
 
     render () {
