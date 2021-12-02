@@ -27,7 +27,17 @@ class Register extends React.Component {
         console.log(this.state)
     }
 
+    passwordChecker = () => {
+        if (this.state.password == this.state.confirmPassword) {
+            this.props.confirmReg(this.state)
+            this.redirectHandler()
+        } else {
+            alert("Password does not match")
+        }
+    }
+
     render () {
+        
         const { redirect } = this.state;
         if(redirect) {
             return <Redirect to="/"/>
@@ -66,7 +76,7 @@ class Register extends React.Component {
                     </div>
                 </div>
                 <div className="pp3__button-container">
-                    <button onClick={()=>{this.props.confirmReg(this.state); this.redirectHandler()}}>Register now!</button>
+                    <button onClick={()=>{this.passwordChecker()}}>Register now!</button>
                 </div>
             </div>
         )

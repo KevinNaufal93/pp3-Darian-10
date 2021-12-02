@@ -3,7 +3,6 @@ import { API_URL } from "../../constants/API";
 
 export const confirmReg = (data) => {
     console.log(data);
-    if(data.password === data.confirmPassword) {
     return (dispatch) => {
       Axios.post(API_URL + "/register/", {
         username: data.username,
@@ -27,7 +26,28 @@ export const confirmReg = (data) => {
           console.log(err);
         });
       };
-    } else {
-      alert("Wrong password or doesnt match")
-    }
+  };
+
+  export const confirmLog = (data) => {
+    return (dispatch) => {
+      Axios.post(API_URL + "/login/", {
+        username: data.username,
+        password: data.password,
+      })
+        .then((res) => {
+          console.log(`res datalogin is ${res.data.dataLogin}`);
+          delete res.data.dataLogin.password;
+          localStorage.setItem("userDataTelaga", res.data.token);
+          console.log(res.data.dataLogin);
+  
+          dispatch({
+            type: "USER_LOGIN",
+            payload: res.data.dataLogin,
+          });
+        })
+        .catch((err) => {
+          alert("Login failed");
+          console.log(err);
+        });
+    };
   };
