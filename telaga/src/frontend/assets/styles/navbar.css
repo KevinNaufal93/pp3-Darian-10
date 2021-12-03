@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: #292929;
     padding: 2rem 2rem;
+    font-family: "Arial";
+    color: #fff;
 }
 
 .pp3__navbar-links {
@@ -36,7 +38,7 @@
     font-size: 18px;
     line-height: 25px;
     text-transform: capitalize;
-
+    text-decoration: none;
     margin: 0 1rem;
     cursor: pointer;
 }
@@ -51,15 +53,33 @@
 
 .pp3__navbar-item button {
     color: #fff;
-    background: #ff4820;
+    background: #ffa31a;
     border: 0;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
     padding: 1rem 2rem;
     font-family: var(--font-family);
-    text-decoration: none;
+
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
+}
+
+  
+.hub {
+display: flex;
+justify-content: flex-start;
+font-family: sans-serif;
+font-weight: bold;
+font-size: 19px;
+}
+  
+.hub span:nth-child(2) {
+background: #FF9900;
+color: #000000;
+border-radius: 5px;
+padding: 0 1px 1px 1px;
+display: inline-block;
+margin-left:5px;
 }

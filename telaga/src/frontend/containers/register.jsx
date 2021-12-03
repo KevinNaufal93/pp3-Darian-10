@@ -45,7 +45,7 @@ class Register extends React.Component {
         console.log(this.state)
 
         return (
-            <div>
+            <div className="base-container">
                 <div className="pp3__header">REGISTER</div>
 
                 <div className="pp3__form">

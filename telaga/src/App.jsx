@@ -29,15 +29,15 @@ class App extends React.Component {
   render() {
     return (
     <BrowserRouter>
-        <div className="gradient__bg">
+      <div className="bg">
         <MyNavbar />
-        </div>
         <Switch>
           <Route component={Register} path="/register" />
           <Route component={SuperAdmin} path="/sa" />
           <Route component={Login} path="/login" />
           <Route component={LandingPage} path="/" />
         </Switch>
+      </div>
     </BrowserRouter>
     )}
 

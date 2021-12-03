@@ -13,9 +13,10 @@ class MyNavbar extends React.Component {
     return (
         <div className="pp3__navbar">
             <div className="pp3__navbar-links">
-                <div className="pp3__navbar-links_logo">
-                    <img src={logo} alt="logo" />
-                </div> 
+                <div class="hub">
+                    <span>Da</span>
+                    <span>Rian</span>
+                </div>
                 <div className="pp3__navbar-links_container">
                     <p><Link to="/">Home</Link></p>
 
@@ -41,7 +42,7 @@ class MyNavbar extends React.Component {
             { 
                 this.props.userGlobal.username.length > 2 ? 
                 <button onClick={()=>{this.props.logoutUser()}}>Sign Out</button> :
-                <button><Link to="/login">Sign In</Link></button>
+                <button><Link to="/login" style={{ textDecoration: 'none', color: '#fff' }}>Sign In</Link></button>
             }
                     
             </div>

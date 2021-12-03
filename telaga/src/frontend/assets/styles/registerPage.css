@@ -1,3 +1,13 @@
+.base-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1b1b;
+    font-family: "Arial";
+    color: #fff;
+}
+
 .pp3__header {
     display: flex;
     justify-content: space-around;
@@ -36,7 +46,7 @@
 
 .pp3__button-container button {
     color: #fff;
-    background: #ff4820;
+    background: #ffa31a;
     border: 0;
     border-radius: 5px;
     outline: none;
