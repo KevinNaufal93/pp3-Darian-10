@@ -20,17 +20,17 @@ class MyNavbar extends React.Component {
                     <p><Link to="/">Home</Link></p>
 
                     { 
-                        this.props.userGlobal.auth_status === "admin" ? 
-                        <p><Link to="/taskmaster">View Task</Link></p> :
+                        this.props.userGlobal.auth_status === "super_admin" ? 
+                        <p><Link to="/sa">Task Management</Link></p> :
+                        this.props.userGlobal.auth_status === "admin" ?
+                        <p><Link to="/">View Task</Link></p> :
                         <p><Link to="/register">Sign Up</Link></p>
                     }
                     
                     {
                         this.props.userGlobal.username.length > 2 ?
-                        
                         <p>Hello, {this.props.userGlobal.username}</p> :
                         <p>Please Register or Sign in</p>
-                        
                     }
                     
 
@@ -39,7 +39,7 @@ class MyNavbar extends React.Component {
             <div className="pp3__navbar-item">
 
             { 
-                this.props.userGlobal.auth_status === "admin" ? 
+                this.props.userGlobal.username.length > 2 ? 
                 <button onClick={()=>{this.props.logoutUser()}}>Sign Out</button> :
                 <button><Link to="/login">Sign In</Link></button>
             }

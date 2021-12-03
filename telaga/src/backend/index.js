@@ -16,12 +16,14 @@ app.use(express.static('public'))
 const {   
     loginRouter,
     registerRouter, 
+    superAdminRouter
     } = require("./routers");
 
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/keepLoggedIn", loginRouter);
+app.use("/sam", superAdminRouter);
 
 
 app.listen(port, () => `Server running in port ${port}`);
