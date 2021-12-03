@@ -1,5 +1,5 @@
 const { db } = require('../database');
-
+const { createToken } = require('../helper/createToken')
 
 module.exports = {
 
@@ -28,14 +28,30 @@ module.exports = {
         console.log(`logging in into ${req.body.username} account'`)
         let scriptQuery = `SELECT * FROM user WHERE username = ${db.escape(req.body.username)} AND password = ${db.escape(req.body.password)}`;
         db.query(scriptQuery, (err, result) => {
-            console.log(result)
+            console.log(result[0])
             if (err) {
                 return res.send({err, message: "Wrong username or password"})
-            } else if (result[0]) {
-                console.log(`result[0] is ${result[0]}`)
+            } if (result[0]) { //create token
+                let { iduser, username } = result[0]   
+                let token = createToken({ iduser, username })
+                console.log(`Create Token successful : ${token}`)
+                return res.status(200).send({ dataLogin: result[0], token, message:"Login Success" })
             } else {
                 return res.send({message: "Account not found"})
             }
+        })
+    },
+
+    keepLogin: (req,res) => {
+        console.log(req.user)
+        db.query(`SELECT * FROM user WHERE iduser = ${req.user.iduser}`,
+        (err, result) => {
+            if (err) {
+                return res.send(err)
+            }
+            console.log(req.user)
+            return res.send(result)
+            
         })
     },
 

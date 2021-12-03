@@ -51,3 +51,41 @@ export const confirmReg = (data) => {
         });
     };
   };
+
+  export const userKeepLogin = (data) => {
+    console.log(data)
+    return (dispatch) => {
+      Axios.get(API_URL + `/keeploggedIn/kl`, {
+        headers: {
+          "Authorization": `Bearer ${data}`
+        }
+      })
+        .then((res) => {
+          console.log(res)
+          // delete res.data[0].password;
+          // localStorage.setItem("userDataEmmerce", JSON.stringify(res.data[0]));
+  
+          dispatch({
+            type: "USER_LOGIN",
+            payload: res.data[0],
+          });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    };
+  };
+
+  export const logoutUser = () => {
+    localStorage.removeItem("userDataTelaga");
+    // localStorage.removeItem("cartData");
+    return {
+      type: "USER_LOGOUT",
+    };
+  };
+
+  export const checkStorage = () => {
+    return {
+      type: "CHECK_STORAGE",
+    };
+  };

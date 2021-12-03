@@ -7,13 +7,13 @@ import '../assets/styles/registerPage.css'
 class Register extends React.Component {
 
     state = { 
-        user_id: 0,
+        iduser: 0,
         username: "",
         email: "",
         password: "",
         confirmPassword: "",
         fullname: "",
-        auth_status: "user",
+        auth_status: "admin",
     }
     
     redirectHandler = () => {

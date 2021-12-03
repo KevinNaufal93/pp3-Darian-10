@@ -21,6 +21,7 @@ const {
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+app.use("/keepLoggedIn", loginRouter);
 
 
 app.listen(port, () => `Server running in port ${port}`);
