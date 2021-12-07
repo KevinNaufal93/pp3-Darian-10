@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pp3-Darian-10/static/css/main.b9095850.chunk.css",
+    "main.js": "/pp3-Darian-10/static/js/main.f418b340.chunk.js",
+    "main.js.map": "/pp3-Darian-10/static/js/main.f418b340.chunk.js.map",
+    "runtime-main.js": "/pp3-Darian-10/static/js/runtime-main.30b22adb.js",
+    "runtime-main.js.map": "/pp3-Darian-10/static/js/runtime-main.30b22adb.js.map",
+    "static/css/2.383c0125.chunk.css": "/pp3-Darian-10/static/css/2.383c0125.chunk.css",
+    "static/js/2.29538a40.chunk.js": "/pp3-Darian-10/static/js/2.29538a40.chunk.js",
+    "static/js/2.29538a40.chunk.js.map": "/pp3-Darian-10/static/js/2.29538a40.chunk.js.map",
+    "static/js/3.f0bf3e95.chunk.js": "/pp3-Darian-10/static/js/3.f0bf3e95.chunk.js",
+    "static/js/3.f0bf3e95.chunk.js.map": "/pp3-Darian-10/static/js/3.f0bf3e95.chunk.js.map",
+    "index.html": "/pp3-Darian-10/index.html",
+    "static/css/2.383c0125.chunk.css.map": "/pp3-Darian-10/static/css/2.383c0125.chunk.css.map",
+    "static/css/main.b9095850.chunk.css.map": "/pp3-Darian-10/static/css/main.b9095850.chunk.css.map",
+    "static/js/2.29538a40.chunk.js.LICENSE.txt": "/pp3-Darian-10/static/js/2.29538a40.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30b22adb.js",
+    "static/css/2.383c0125.chunk.css",
+    "static/js/2.29538a40.chunk.js",
+    "static/css/main.b9095850.chunk.css",
+    "static/js/main.f418b340.chunk.js"
+  ]
+}
