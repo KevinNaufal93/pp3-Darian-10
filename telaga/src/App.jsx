@@ -6,6 +6,7 @@ import LandingPage from './frontend/containers/landingPage'
 import Register from './frontend/containers/register'
 import Login from './frontend/containers/login'
 import SuperAdmin from './frontend/containers/superAdminPage'
+import AdminView from './frontend/containers/adminView'
 import {MyNavbar} from './frontend/components'
 
 import { connect } from "react-redux";
@@ -34,6 +35,7 @@ class App extends React.Component {
         <Switch>
           <Route component={Register} path="/register" />
           <Route component={SuperAdmin} path="/sa" />
+          <Route component={AdminView} path="/av" />
           <Route component={Login} path="/login" />
           <Route component={LandingPage} path="/" />
         </Switch>

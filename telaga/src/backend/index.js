@@ -16,7 +16,8 @@ app.use(express.static('public'))
 const {   
     loginRouter,
     registerRouter, 
-    superAdminRouter
+    superAdminRouter,
+    adminRouter
     } = require("./routers");
 
 
@@ -24,6 +25,7 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/keepLoggedIn", loginRouter);
 app.use("/sam", superAdminRouter);
+app.use("/am", adminRouter);
 
 
 app.listen(port, () => `Server running in port ${port}`);

@@ -5,9 +5,16 @@ export const confirmAdd = (data) => {
     console.log(data);
     return (dispatch) => {
       Axios.post(API_URL + "/sam/", {
-        order_id: data.order_id,
-        order_desc: data.order_desc,
-        order_spec: data.order_spec,
+        so: data.so,
+        client: data.client,
+        product: data.product,
+        design: data.design,
+        potong: data.potong,
+        press: data.press,
+        sablon: data.sablon,
+        bordir: data.bordir,
+        jahit: data.jahit,
+        finishing: data.finishing,
         deadline: data.deadline,
         order_status: data.order_status,
       })

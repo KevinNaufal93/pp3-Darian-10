@@ -3,7 +3,6 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../../assets/styles/navbar.css'
-import logo from '../../assets/img/logo.png'
 import {logoutUser} from '../../redux/action/user';
 
 class MyNavbar extends React.Component {
@@ -41,7 +40,7 @@ class MyNavbar extends React.Component {
 
             { 
                 this.props.userGlobal.username.length > 2 ? 
-                <button onClick={()=>{this.props.logoutUser()}}>Sign Out</button> :
+                <button onClick={()=>{this.props.logoutUser()}}><Link to="/">Sign Out</Link></button> :
                 <button><Link to="/login" style={{ textDecoration: 'none', color: '#fff' }}>Sign In</Link></button>
             }
                     

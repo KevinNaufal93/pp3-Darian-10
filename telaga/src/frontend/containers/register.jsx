@@ -28,7 +28,7 @@ class Register extends React.Component {
     }
 
     passwordChecker = () => {
-        if (this.state.password == this.state.confirmPassword) {
+        if (this.state.password === this.state.confirmPassword) {
             this.props.confirmReg(this.state)
             this.redirectHandler()
         } else {

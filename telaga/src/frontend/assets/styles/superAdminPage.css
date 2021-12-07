@@ -5,6 +5,7 @@
     margin-top: 20px;
     font-weight: 600;
     font-size: 40px;
+    color: #fff!important;
 }
 
 .pp3__form {
@@ -12,6 +13,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: #fff!important;
+}
+
+.pp3__form-radio {
+    display: inline-grid;
+    grid-auto-flow: dense;
+    align-items: space-between;
+    color: #fff!important;
+}
+
+.pp3__form-radio label {
+    padding: 0.5rem;
 }
 
 .pp3__form-group {
