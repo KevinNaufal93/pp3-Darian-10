@@ -40,8 +40,8 @@ class MyNavbar extends React.Component {
 
             { 
                 this.props.userGlobal.username.length > 2 ? 
-                <button onClick={()=>{this.props.logoutUser()}}><Link to="/">Sign Out</Link></button> :
-                <button><Link to="/login" style={{ textDecoration: 'none', color: '#fff' }}>Sign In</Link></button>
+                <button onClick={()=>{this.props.logoutUser()}}><Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Sign Out</Link></button> :
+                <button><Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>Sign In</Link></button>
             }
                     
             </div>

@@ -33,50 +33,94 @@ class ViewTask extends React.Component {
         this.setState({redirect: true})
     }
 
+    fetchTaskManager = (order_no) => {
+        if(this.state.tasks){
+            return this.state.tasks.map((val) => {
+        return(
+            <tr>
+                <td className="align-middle">{val.so}</td>
+                <td className="align-middle">{val.client}</td>
+                <td className="align-middle">{val.product}</td>
+                <td className="align-middle">{val.design}</td>
+                <td className="align-middle">{val.potong}</td>
+                <td className="align-middle">{val.press}</td>
+                <td className="align-middle">{val.sablon}</td>
+                <td className="align-middle">{val.bordir}</td>
+                <td className="align-middle">{val.jahit}</td>
+                <td className="align-middle">{val.finishing}</td>
+                <td className="align-middle">{val.deadline}</td>
+                <td className="align-middle">{val.order_status}</td>
+                <td className="align-middle">
+                    {
+                    this.props.userGlobal.auth_status === "super_admin" ? 
+                    <button className="pp3__adm-btn" type="submit">Manage Order</button> : 
+                    <p></p>
+                    }
+                </td>
+            </tr>
+            )}
+        )}
+    }
+
     renderTask = () => {
         if(this.state.tasks){
             
             return this.state.tasks.map((val) => {
+                console.log(val.order_no)
                 let newDeadline = val.deadline.slice(0,10)
 
                 if(val.design == 'yes') {
                     val.design = '✔'
+                } else if(val.design == 'init') {
+                    val.design = '❌'
                 } else {
                     val.design = '🕒'
                 }
 
                 if(val.potong == 'yes') {
                     val.potong = '✔'
+                } else if(val.potong == 'init') {
+                    val.potong = '❌'
                 } else {
                     val.potong = '🕒'
                 }
 
                 if(val.press == 'yes') {
                     val.press = '✔'
+                } else if(val.press == 'init') {
+                    val.press = '❌'
                 } else {
                     val.press = '🕒'
                 }
 
                 if(val.sablon == 'yes') {
                     val.sablon = '✔'
+                } else if(val.sablon == 'init') {
+                    val.sablon = '❌'
                 } else {
                     val.sablon = '🕒'
                 }
 
                 if(val.bordir == 'yes') {
                     val.bordir = '✔'
+                } else if(val.bordir == 'init') {
+                    val.bordir = '❌'
                 } else {
                     val.bordir = '🕒'
                 }
 
                 if(val.jahit == 'yes') {
                     val.jahit = '✔'
+                } else if(val.jahit == 'init') {
+                    val.jahit = '❌'
                 } else {
                     val.jahit = '🕒'
                 }
 
                 if(val.finishing == 'yes') {
                     val.finishing = '✔'
+                } else if(val.finishing == 'init') {
+                    val.finishing = '❌'
                 } else {
                     val.finishing = '🕒'
                 }
@@ -96,14 +140,20 @@ class ViewTask extends React.Component {
                         <td>{newDeadline}</td>
                         <td>{val.order_status}</td>
                         <td>
-                        <button type="submit">Manage Order</button>
+                            {
+                            this.props.userGlobal.auth_status === "super_admin" ? 
+                            <button onClick={this.fetchTaskManager(val.order_no)} className="pp3__adm-btn" type="submit">Manage Order</button> : 
+                            <p></p>
+                            }
                         </td>
                     </tr>
                     )
             })
         } else {
-            return(
-                <h1>Task is empty</h1>)
+            return
+                (
+                <h1>Task is empty</h1>
+                )
         }
     }   
 
