@@ -2,7 +2,7 @@ import Axios from "axios";
 import { API_URL } from "../../constants/API";
 
 export const confirmReg = (data) => {
-    console.log(data);
+    //console.log(data);
     return (dispatch) => {
       Axios.post(API_URL + "/register/", {
         username: data.username,
@@ -15,7 +15,7 @@ export const confirmReg = (data) => {
       })
         .then((res) => {
           alert("Registration successful");
-          console.log(`data registered for processing ${res.data}`);
+          //console.log(`data registered for processing ${res.data}`);
           dispatch({
             type: "USER_LOGIN",
             payload: res.data[0],
@@ -35,10 +35,10 @@ export const confirmReg = (data) => {
         password: data.password,
       })
         .then((res) => {
-          console.log(`res datalogin is ${res.data.dataLogin}`);
+          //console.log(`res datalogin is ${res.data.dataLogin}`);
           delete res.data.dataLogin.password;
           localStorage.setItem("userDataTelaga", res.data.token);
-          console.log(res.data.dataLogin);
+          //console.log(res.data.dataLogin);
   
           dispatch({
             type: "USER_LOGIN",
@@ -53,7 +53,7 @@ export const confirmReg = (data) => {
   };
 
   export const userKeepLogin = (data) => {
-    console.log(data)
+    //console.log(data)
     return (dispatch) => {
       Axios.get(API_URL + `/keeploggedIn/kl`, {
         headers: {
@@ -63,7 +63,7 @@ export const confirmReg = (data) => {
         .then((res) => {
           console.log(res)
           // delete res.data[0].password;
-          // localStorage.setItem("userDataEmmerce", JSON.stringify(res.data[0]));
+          // localStorage.setItem("userDataTelaga", JSON.stringify(res.data[0]));
   
           dispatch({
             type: "USER_LOGIN",
@@ -75,6 +75,23 @@ export const confirmReg = (data) => {
         });
     };
   };
+
+  export const getTask = () => {
+    return (dispatch) => {
+    Axios.get(API_URL + `/am/`)
+    
+      .then((res) => {
+        //console.log(res.data)
+        dispatch({
+          type: "TASK_GET",
+          payload: res.data
+        })
+      })
+      .catch((err) => {
+          alert(err);
+      });
+  }
+};
 
   export const logoutUser = () => {
     localStorage.removeItem("userDataTelaga");

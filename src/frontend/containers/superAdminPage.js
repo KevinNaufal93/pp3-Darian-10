@@ -19,12 +19,16 @@ class Register extends React.Component {
         jahit:"init",
         finishing: "init",
         deadline: "",
-        order_status: "Started"
+        order_status: "started"
     }
     
     redirectHandler = () => {
         console.log(this.props.userGlobal.auth_status)
         this.setState({redirect: true})
+    }
+
+    resetForm = () => { 
+        this.myFormRef.reset();
     }
 
     inputHandler = (event) =>{
@@ -51,6 +55,7 @@ class Register extends React.Component {
             <div>
                 <div className="pp3__header">Add Order</div>
 
+                
                 <div className="pp3__form">
 
                     <div className="pp3__form-group">
@@ -76,7 +81,9 @@ class Register extends React.Component {
                 </div>
                 <div className="pp3__button-container">
                     <button onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
+                
                 </div>
+                
             </div>
         )
     }

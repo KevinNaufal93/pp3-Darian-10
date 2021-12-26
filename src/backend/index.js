@@ -25,7 +25,9 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/keepLoggedIn", loginRouter);
 app.use("/sam", superAdminRouter);
+app.use("/search", superAdminRouter);
 app.use("/am", adminRouter);
+app.use("/tm", superAdminRouter);
 
 
 app.listen(port, () => `Server running in port ${port}`);

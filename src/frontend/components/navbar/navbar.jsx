@@ -8,7 +8,6 @@ import {logoutUser} from '../../redux/action/user';
 class MyNavbar extends React.Component {
 
     render () {
-    console.log(this.props.userGlobal)
     return (
         <div className="pp3__navbar">
             <div className="pp3__navbar-links">
