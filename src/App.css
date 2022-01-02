@@ -3,20 +3,11 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  
-}
-
-body {
-  background: #1b1b1b!important;
 }
 
 a {
   color: unset;
   text-decoration: none;
-}
-
-.bg {
-  background-color: #1b1b1b
 }
 
 .gradient__text {

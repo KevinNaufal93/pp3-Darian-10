@@ -1,44 +1,45 @@
-.pp3__header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 40px;
-    color: #fff!important;
+.pp3__taskCreation-base-container{
+    background-image: url("../img/telaga-bg-1.png");
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.pp3__form {
+.pp3__taskCreation-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Larsseit";
+    color: #fff;
+}
+
+.pp3__taskCreation-form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: #fff!important;
+    background-color: rgba(121, 82, 128, 0.3);
+    margin-top:4rem;
+    margin-left:7rem;
+    border-radius:3rem;
+    padding: 4rem;
+    color: #fff;
 }
 
-.pp3__form-radio {
-    display: inline-grid;
-    grid-auto-flow: dense;
-    align-items: space-between;
-    color: #fff!important;
-}
-
-.pp3__form-radio label {
-    padding: 0.5rem;
-}
-
-.pp3__form-group {
-    padding: 1rem;
+.pp3__taskCreation-form-group {
+    padding: 1rem 1rem 2rem 1rem;
     font-size: 20px;
-    font-weight: 400;
 }
 
-.pp3__form-group input {
+.pp3__taskCreation-form input {
     height: 30px;
-}
-
-.pp3__form-group label {
-    display: block;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2.5px solid white;
 }
 
 .pp3__button-container {
@@ -49,14 +50,13 @@
 
 .pp3__button-container button {
     color: #fff;
-    background: #ffa31a;
+    background-color: rgb(140, 55, 151);
     border: 0;
-    border-radius: 5px;
+    border-radius: 6rem;
     outline: none;
     cursor: pointer;
-    padding: 1rem 2rem;
-    font-family: var(--font-family);
+    padding: 1rem 4rem;
+    font-family: "Larsseit-Bold";
     font-size: 18px;
-    font-weight: 500;
     line-height: 25px;
 }

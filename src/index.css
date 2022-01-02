@@ -1,14 +1,47 @@
 body {
+  background-image: url("./frontend/assets/img/telaga-bg-1.png");
+  width: 100%;
+  height: 100%;
+  background-position: center center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Larsseit";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b1b1b;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url("./frontend/assets/fonts/Larsseit/Larsseit-Thin.otf") format('truetype');
+}
+
+@font-face {
+  font-family: Larsseit-Bold;
+  src: url("./frontend/assets/fonts/Larsseit/Larsseit-Bold.otf") format('truetype');
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:    #fff;
+ opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    #fff;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:    #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+ color:    #fff;
+}
+
+::placeholder { /* Modern browsers */
+ color:    #fff;
 }

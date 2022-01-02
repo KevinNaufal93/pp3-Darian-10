@@ -7,7 +7,8 @@ import Register from './frontend/containers/register'
 import Login from './frontend/containers/login'
 import SuperAdmin from './frontend/containers/superAdminPage'
 import AdminView from './frontend/containers/adminView'
-import TaskManager from './frontend/containers/taskManager'
+import TaskManager from './frontend/containers/editTask'
+import TaskStatus from './frontend/containers/taskStatus'
 import {MyNavbar} from './frontend/components'
 
 import { connect } from "react-redux";
@@ -39,6 +40,7 @@ class App extends React.Component {
           <Route component={AdminView} path="/av" />
           <Route component={Login} path="/login" />
           <Route component={TaskManager} path="/tm" />
+          <Route component={TaskStatus} path="/ts" />        
           <Route component={LandingPage} path="/" />
         </Switch>
       </div>

@@ -36,7 +36,7 @@ module.exports = {
     searchOrder: (req,res) => {
         let { so } = req.body;
         console.log(`API searching for ${so} detail`)
-        let scriptQuery = `SELECT * FROM order_db WHERE so = ${db.escape(req.body.so)} and order_status = 'started'`;
+        let scriptQuery = `SELECT * FROM order_db WHERE so = ${db.escape(req.body.so)} and order_status = 'started';`;
         db.query(scriptQuery, (err, result) => {
             console.log(result)
             if (err) {
@@ -51,7 +51,7 @@ module.exports = {
     },
 
     updateOrder: (req,res) => {
-        let { so, design, potong, press, sablon, bordir, jahit, finishing, deadline, order_status } = req.body;
+        let { so, design, potong, press, sablon, bordir, jahit, finishing } = req.body;
         console.log(`API updating for ${so}`)
         let scriptQuery = `UPDATE order_db SET 
         design = ${db.escape(design)},
@@ -60,11 +60,25 @@ module.exports = {
         sablon = ${db.escape(sablon)},
         bordir = ${db.escape(bordir)},
         jahit = ${db.escape(jahit)},
-        finishing = ${db.escape(finishing)},
-        deadline = ${db.escape(deadline)},
-        order_status = ${db.escape(order_status)} WHERE so = ${db.escape(so)}`
+        finishing = ${db.escape(finishing)} WHERE so = ${db.escape(so)};`;
         db.query(scriptQuery, (err, result) => {
-            console.log(result)
+            //console.log(scriptQuery, result)
+            if (err) {
+                return res.send({err, message: "update result error"})
+            } else {
+                return res.send({err, message: "update success"})
+            }
+        })
+    },
+
+    updateOrderStatus: (req,res) => {
+        let { so, deadline, order_status } = req.body;
+        console.log(`API updating status for ${so}`)
+        let scriptQuery = `UPDATE order_db SET 
+        deadline = ${db.escape(deadline)}, 
+        order_status = ${db.escape(order_status)} 
+        WHERE so = ${db.escape(so)};`;
+        db.query(scriptQuery, (err, result) => {
             if (err) {
                 return res.send({err, message: "update result error"})
             } else {

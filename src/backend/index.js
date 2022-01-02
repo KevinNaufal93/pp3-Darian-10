@@ -3,7 +3,7 @@ const cors = require("cors");
 const bearerToken = require("express-bearer-token");
 const bodyParser = require("body-parser");
 
-const port = 2700; //port
+const port = process.env.PORT || 2700; //port
 const app = express();
 
 app.use(cors());
@@ -28,6 +28,7 @@ app.use("/sam", superAdminRouter);
 app.use("/search", superAdminRouter);
 app.use("/am", adminRouter);
 app.use("/tm", superAdminRouter);
+app.use("/ts", superAdminRouter);
 
 
 app.listen(port, () => `Server running in port ${port}`);

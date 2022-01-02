@@ -15,9 +15,12 @@ class ViewTask extends React.Component {
     componentDidMount() {
         if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="admin"){
             this.props.getTask()
+            //setInterval(this.props.getTask, 5000)
             //console.log(this.props.userGlobal)
         } else {
-            this.redirectHandler();
+            this.props.getTask()
+            //setInterval(this.props.getTask, 5000)
+            //this.redirectHandler();
         }
     }
 
@@ -28,64 +31,85 @@ class ViewTask extends React.Component {
     renderTask = () => {
 
         if(this.props.userGlobal.tasks[0]){
-            return this.props.userGlobal.tasks.map((val) => {
-                //console.log(val.order_no)
+            console.log(this.props.userGlobal.tasks.deadline)
+            return this.props.userGlobal.tasks.sort(function(a,b){
+                console.log(a.deadline)
+                var c = new Date(a.deadline.replace(/-/g, '\/').replace(/T.+/, ''));
+                var d = new Date(b.deadline.replace(/-/g, '\/').replace(/T.+/, ''));
+                return c - d
+            }).map((val) => {
+                
                 const newDeadline = val.deadline.slice(0,10)
+                console.log(newDeadline)
 
-                if(val.design === 'yes') {
+                if(val.design === 'done') {
                     val.design = '✔'
-                } else if(val.design === 'init') {
-                    val.design = '❌'
-                } else {
+                } else if(val.design === 'on_progress') {
                     val.design = '🕒'
+                } else if (val.design === 'not_started') {
+                    val.design = "-"
+                } else {
+                    val.design = '❌'
                 }
 
-                if(val.potong === 'yes') {
+                if(val.potong === 'done') {
                     val.potong = '✔'
-                } else if(val.potong === 'init') {
-                    val.potong = '❌'
-                } else {
+                } else if(val.potong === 'on_progress') {
                     val.potong = '🕒'
+                } else if (val.potong === 'not_started') {
+                    val.potong = "-"
+                } else {
+                    val.potong = '❌'
                 }
 
-                if(val.press === 'yes') {
+                if(val.press === 'done') {
                     val.press = '✔'
-                } else if(val.press === 'init') {
-                    val.press = '❌'
-                } else {
+                } else if(val.press === 'on_progress') {
                     val.press = '🕒'
+                } else if (val.press === 'not_started') {
+                    val.press = "-"
+                } else {
+                    val.press = '❌'
                 }
 
-                if(val.sablon === 'yes') {
+                if(val.sablon === 'done') {
                     val.sablon = '✔'
-                } else if(val.sablon === 'init') {
-                    val.sablon = '❌'
-                } else {
+                } else if(val.sablon === 'on_progress') {
                     val.sablon = '🕒'
+                } else if (val.sablon === 'not_started') {
+                    val.sablon = "-"
+                } else {
+                    val.sablon = '❌'
                 }
 
-                if(val.bordir === 'yes') {
+                if(val.bordir === 'done') {
                     val.bordir = '✔'
-                } else if(val.bordir === 'init') {
-                    val.bordir = '❌'
-                } else {
+                } else if(val.bordir === 'on_progress') {
                     val.bordir = '🕒'
+                } else if (val.bordir === 'not_started') {
+                    val.bordir = "-"
+                } else {
+                    val.bordir = '❌'
                 }
 
-                if(val.jahit === 'yes') {
+                if(val.jahit === 'done') {
                     val.jahit = '✔'
-                } else if(val.jahit === 'init') {
-                    val.jahit = '❌'
-                } else {
+                } else if(val.jahit === 'on_progress') {
                     val.jahit = '🕒'
+                } else if (val.jahit === 'not_started') {
+                    val.jahit = "-"
+                } else {
+                    val.jahit = '❌'
                 }
 
-                if(val.finishing === 'yes') {
+                if(val.finishing === 'done') {
                     val.finishing = '✔'
-                } else if(val.finishing === 'init') {
-                    val.finishing = '❌'
-                } else {
+                } else if(val.finishing === 'on_progress') {
                     val.finishing = '🕒'
+                } else if (val.finishing === 'not_started') {
+                    val.finishing = "-"
+                } else {
+                    val.finishing = '❌'
                 }
 
                 return(
@@ -108,17 +132,17 @@ class ViewTask extends React.Component {
         } else if (this.props.userGlobal.tasks) {
             return(
                     <tr>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
-                    <td className="align-middle">-</td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
+                    <td className="align-middle"> </td>
                 </tr>
                 )
             }
@@ -131,11 +155,11 @@ class ViewTask extends React.Component {
             return <Redirect to="/"/>
         }
 
-        return <div className="base-container">
-                    <div className="content">
-                        <div className="header">Task Overview</div>
-                        <table className="table">
-                            <thead className="table-light">
+        return <div className="pp3__adm-base-container">
+                    <div className="pp3__adm-content">
+                        <div className="pp3__adm-header">Task Overview</div>
+                        <table className="table" style={{width:'100%', height:'100%'}}>
+                            <thead className="table" style={{backgroundColor: "rgb(140, 55, 151, 0.2)"}} >
                                 <tr>
                                     <th scope="col">SO Nomor</th>
                                     <th scope="col">Client</th>
@@ -157,12 +181,18 @@ class ViewTask extends React.Component {
                         </table>
                     </div>
 
+                    <div className="pp3__adm-btn-container">
                     {
                         this.props.userGlobal.auth_status === "super_admin" ? 
-                        <button className="pp3__adm-btn"><Link to="/tm">Manage Order</Link></button> : 
+                        <button className="pp3__adm-btn"><Link to="/tm" style={{ textDecoration: 'none', color: 'white' }}>Task Manager</Link></button> : 
                         ""
                     }
-
+                                        {
+                        this.props.userGlobal.auth_status === "super_admin" ? 
+                        <button className="pp3__adm-btn"><Link to="/ts" style={{ textDecoration: 'none', color: 'white' }}>Edit Task Status</Link></button> : 
+                        ""
+                    }
+                    </div>
                 </div>
     }
 
@@ -175,7 +205,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-
     getTask
 }
 

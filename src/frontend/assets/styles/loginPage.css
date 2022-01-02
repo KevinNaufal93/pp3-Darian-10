@@ -1,14 +1,14 @@
-.pp3__register-base-container {
+.pp3__login-base-container {
     background-image: url("../img/telaga-bg-1.png");
-    background-size: cover;
-    height: 100%;
     width: 100%;
-    position: sticky;
+    height: 100%;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
-    padding-bottom: 4rem;
 }
 
-.pp3__register-content {
+.pp3__login-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,11 +22,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgba(121, 82, 128, 0.3);
-    margin-top:4rem;
+    margin-top:7rem;
     margin-left: 7rem;
     border-radius: 3rem;
     padding: 4rem;
-    color: #fff;
 }
 
 .pp3__form-group {

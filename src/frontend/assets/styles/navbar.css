@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #292929;
-    padding: 2rem 2rem;
-    font-family: "Arial";
+    padding: 1rem 2rem;
+    font-family: "Larsseit";
+    letter-spacing: 0.15em;
     color: #fff;
 }
 
@@ -33,13 +33,13 @@
 .pp3__navbar-sign p,
 .pp3__navbar-menu_container p {
     color:#fff;
-    font-family: var(--font-family);
+    font-family: "Larsseit";
     font-weight:500;
-    font-size: 18px;
+    font-size: 1.5rem;
     line-height: 25px;
     text-transform: capitalize;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 0 1rem 0 3rem;
     cursor: pointer;
 }
 
@@ -53,23 +53,23 @@
 
 .pp3__navbar-item button {
     color: #fff;
-    background: #ffa31a;
+    background: transparent;
     border: 0;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    padding: 1rem 2rem;
-    font-family: var(--font-family);
-
-    font-size: 18px;
+    font-family: "Larsseit";
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 25px;
+    letter-spacing: 0.15em;
 }
 
 .hub {
 display: flex;
 justify-content: flex-start;
-font-family: sans-serif;
+padding: 0 1rem;
+font-family: "Larsseit";
 font-weight: bold;
 font-size: 19px;
 }

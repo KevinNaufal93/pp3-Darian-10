@@ -11,13 +11,13 @@ class Register extends React.Component {
         so: "",
         client: "",
         product: "",
-        design: "init",
-        potong:"init",
-        press:"init",
-        sablon:"init",
-        bordir: "init",
-        jahit:"init",
-        finishing: "init",
+        design: "unavailable",
+        potong:"unavailable",
+        press:"unavailable",
+        sablon:"unavailable",
+        bordir: "unavailable",
+        jahit:"unavailable",
+        finishing: "unavailable",
         deadline: "",
         order_status: "started"
     }
@@ -52,38 +52,29 @@ class Register extends React.Component {
         }
 
         return (
-            <div>
-                <div className="pp3__header">Add Order</div>
+            <div className="pp3__taskCreation-base-container">
+                <div className="pp3__taskCreation-content">
+                    <div className="pp3__taskCreation-form">
+                        <div className="pp3__form-group">
+                            <input type="text" name="so" placeholder="SO Number" onChange={this.inputHandler}/>
+                        </div>
 
-                
-                <div className="pp3__form">
+                        <div className="pp3__taskCreation-form-group">
+                            <input type="text" name="client" placeholder="Name of Client" onChange={this.inputHandler}/>             
+                        </div>
 
-                    <div className="pp3__form-group">
-                        <label htmlFor="so">SO</label>
-                        <input type="text" name="so" placeholder="SO number" onChange={this.inputHandler}/>
+                        <div className="pp3__taskCreation-form-group">
+                            <input type="text" name="product" placeholder="Product" onChange={this.inputHandler}/>             
+                        </div>
+
+                        <div className="pp3__taskCreation-form-group">
+                            <input type="date" name="deadline" placeholder="Due Date of Project" onChange={this.inputHandler}/>             
+                        </div>
+                        <div className="pp3__button-container">
+                        <button onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
+                        </div>
                     </div>
-
-                    <div className="pp3__form-group">
-                        <label htmlFor="client">Client</label>
-                        <input type="text" name="client" placeholder="Name of Client" onChange={this.inputHandler}/>             
-                    </div>
-
-                    <div className="pp3__form-group">
-                        <label htmlFor="product">Production</label>
-                        <input type="text" name="product" placeholder="Product" onChange={this.inputHandler}/>             
-                    </div>
-
-                    <div className="pp3__form-group">
-                        <label htmlFor="deadline">Deadline</label>
-                        <input type="date" name="deadline" placeholder="Due Date of Project" onChange={this.inputHandler}/>             
-                    </div>
-
                 </div>
-                <div className="pp3__button-container">
-                    <button onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
-                
-                </div>
-                
             </div>
         )
     }

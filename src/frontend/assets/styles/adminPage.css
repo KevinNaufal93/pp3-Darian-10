@@ -1,52 +1,60 @@
 
 
-.base-container {
+/* .pp3__adm-base-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #1b1b1b;
     color: #fff;
-}
+} */
 
-.content {
+/* .pp3__adm-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Arial";
-    margin-top: 10px;
-    padding: 20px 20px;
-}
+} */
 
-.header {
+.pp3__adm-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-family: "Arial";
+    margin-left:2rem;
+    font-family: "Larsseit";
     font-size: 48px;
-    font-weight: 700;
-    align-items: center;
-}
-
-.table {
     color: #fff!important;
 }
 
-.table tbody {
-    background-color: #fff, 
+.table {
+    border: 0;
+    width: 100%;
+    margin: 0px;
+    font-family: "Larsseit";
+    color: #fff!important;
+}
+
+table, td, thead, th, tr, tbody {
+    border: 0;
 }
 
 .pp3__adm-btn {
-    color: black;  
-    background: #ffa31a;
+    color: #fff;
+    background-color: rgb(140, 55, 151);
     border: 0;
-    border-radius: 5px;
+    border-radius: 6rem;
     outline: none;
     cursor: pointer;
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-    font-family: var(--font-family);
+    padding: 1rem 4rem;
+    font-family: "Larsseit-Bold";
     font-size: 18px;
-    font-weight: 900;
     line-height: 25px;
+    margin: 1rem;
+}
+
+.pp3__adm-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem 1rem;
 }

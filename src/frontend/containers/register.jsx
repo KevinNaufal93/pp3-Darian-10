@@ -13,6 +13,7 @@ class Register extends React.Component {
         password: "",
         confirmPassword: "",
         fullname: "",
+        referral_code: "",
         auth_status: "admin",
     }
     
@@ -29,8 +30,12 @@ class Register extends React.Component {
 
     passwordChecker = () => {
         if (this.state.password === this.state.confirmPassword) {
-            this.props.confirmReg(this.state)
-            this.redirectHandler()
+            if (this.state.referral_code === "kmzway87aa") {
+                this.props.confirmReg(this.state)
+                this.redirectHandler()
+            } else {
+                alert("Referral code is wrong")
+            }
         } else {
             alert("Password does not match")
         }
@@ -45,38 +50,38 @@ class Register extends React.Component {
         console.log(this.state)
 
         return (
-            <div className="base-container">
-                <div className="pp3__header">REGISTER</div>
+            <div className="pp3__register-base-container">
+                <div className="pp3__register-content">
 
                 <div className="pp3__form">
 
                     <div className="pp3__form-group">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" name="username" placeholder="username" onChange={this.inputHandler}/>
+                        <input type="text" name="username" placeholder="USERNAME" onChange={this.inputHandler}/>
                     </div>
 
                     <div className="pp3__form-group">
-                        <label htmlFor="email">Email</label>
-                        <input type="text" name="email" placeholder="email" onChange={this.inputHandler}/>             
+                        <input type="text" name="email" placeholder="EMAIL" onChange={this.inputHandler}/>             
                     </div>
 
                     <div className="pp3__form-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" placeholder="password" onChange={this.inputHandler}/>              
+                        <input type="password" name="password" placeholder="PASSWORD" onChange={this.inputHandler}/>              
                     </div>
 
                     <div className="pp3__form-group">
-                        <label htmlFor="password">Confirm Password</label>
-                        <input type="password" name="confirmPassword" placeholder="confirm password" onChange={this.inputHandler}/>             
+                        <input type="password" name="confirmPassword" placeholder="CONFIRM PASSWORD" onChange={this.inputHandler}/>             
                     </div>
 
                     <div className="pp3__form-group">
-                        <label htmlFor="fullname">Full Name</label>
-                        <input type="text" name="fullname" placeholder="full name" onChange={this.inputHandler}/>           
+                        <input type="text" name="fullname" placeholder="FULL NAME" onChange={this.inputHandler}/>           
                     </div>
+                    <div className="pp3__form-group">
+                        <input type="text" name="referral_code" placeholder="REFERRAL CODE" onChange={this.inputHandler}/>           
+                    </div>
+                    <div className="pp3__button-container">
+                    <button onClick={()=>{this.passwordChecker()}}>Register</button>
                 </div>
-                <div className="pp3__button-container">
-                    <button onClick={()=>{this.passwordChecker()}}>Register now!</button>
+                </div>
+
                 </div>
             </div>
         )

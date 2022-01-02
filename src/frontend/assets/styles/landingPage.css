@@ -1,38 +1,38 @@
-body {
-    background-color: #1b1b1b;
-}
-
-h1 {
-    background-color: #292929;
-    padding: 2rem;
-    border-radius: 2rem;
-}
-
 .base-container {
-    margin-top: 100px;
+    background-image: url("../img/telaga-bg-1.png");
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1b1b1b;
+    height: 100%;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     color: #fff;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Arial";
-    margin-top: 200px;
+    font-family: "Larsseit";
+    margin-top: 6rem;
     padding: 20px 20px;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: "Arial";
     font-size: 48px;
-    font-weight: 700;
-    align-items: center;
+    letter-spacing: 0.15em;
+    position: absolute;
+    left: 4rem;
+}
+
+.pp3__button {
+    background: #66286869;
+    position: absolute;
+    left: 4rem;
+    border: 0;
+    border-radius: 3rem;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    line-height: 25px;
+    margin-top: 12rem;   
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import { confirmLog } from "../redux/action/user";  
 import { Redirect } from 'react-router-dom'
-import '../assets/styles/registerPage.css'
+import '../assets/styles/loginPage.css'
 
 class Login extends React.Component {
 
@@ -31,25 +31,21 @@ class Login extends React.Component {
         console.log(this.state)
 
         return (
-            <div className="base-container">
-                <div className="pp3__header">LOGIN</div>
-
+            <div className="pp3__login-base-container">
+                <div className="pp3__login-content">
                 <div className="pp3__form">
-
                     <div className="pp3__form-group">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" name="username" placeholder="username" onChange={this.inputHandler}></input>                
+                        <input type="text" name="username" placeholder="USERNAME" onChange={this.inputHandler}></input>                
                     </div>
-
                     <div className="pp3__form-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" placeholder="password" onChange={this.inputHandler}></input>                
+                        <input type="password" name="password" placeholder="PASSWORD" onChange={this.inputHandler}></input>                
                     </div>
+                    <div className="pp3__button-container">
+                    <button onClick={()=>{this.props.confirmLog(this.state) ; this.redirectHandler()}}>LOG IN</button>
+                    </div>
+                </div>
+                </div>
 
-                </div>
-                <div className="pp3__button-container">
-                    <button onClick={()=>{this.props.confirmLog(this.state) ; this.redirectHandler()}}>Login</button>
-                </div>
             </div>
         )
     }

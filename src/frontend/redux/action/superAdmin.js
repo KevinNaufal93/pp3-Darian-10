@@ -40,7 +40,23 @@ export const confirmAdd = (data) => {
         bordir: data.bordir,
         jahit: data.jahit,
         finishing: data.finishing,
-        deadline: data.deadline.slice(0, 19).replace('T', ' '),
+      })
+        .then((res) => {
+          alert("Order successfully updated");
+        })
+        .catch((err) => {
+          alert("Order Registration failed");
+          console.log(err);
+        });
+      };
+  };
+
+  export const updateOrderStatus = (data) => {
+    console.log(data);
+    return (dispatch) => {
+      Axios.post(API_URL + "/ts/updateStatus", {
+        so: data.so,
+        deadline: data.deadline,
         order_status: data.order_status,
       })
         .then((res) => {
@@ -52,6 +68,7 @@ export const confirmAdd = (data) => {
         });
       };
   };
+
 
   export const searchOrd = (tmSo) => {
     console.log(tmSo);
