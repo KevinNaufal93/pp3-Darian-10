@@ -15,11 +15,11 @@ class ViewTask extends React.Component {
     componentDidMount() {
         if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="admin"){
             this.props.getTask()
-            //setInterval(this.props.getTask, 5000)
+            setInterval(this.props.getTask, 5000)
             //console.log(this.props.userGlobal)
         } else {
             this.props.getTask()
-            //setInterval(this.props.getTask, 5000)
+            setInterval(this.props.getTask, 5000)
             //this.redirectHandler();
         }
     }
