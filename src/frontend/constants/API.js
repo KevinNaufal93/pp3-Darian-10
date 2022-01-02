@@ -1,1 +1,1 @@
-export const API_URL = `http://localhost:2700`
+export const API_URL = `https://telaga-order-management.herokuapp.com`
