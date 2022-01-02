@@ -1,15 +1,15 @@
 const mysql = require("mysql");
 
-const db = mysql.createPool({
-    host:'85.10.205.173',
-    user:'telaga_darian',
-    password: 'kmzway87aa',
+const db = mysql.createConnection({
+    host:'192.168.0.10',
+    user:'root',
+    password: 'password',
     database: 'db_telaga',
     port:'3306',
     multipleStatements: true
 })
 
-db.getConnection((err)=> {
+db.connect((err)=> {
     if(err) {
         return console.log(err)
     }
