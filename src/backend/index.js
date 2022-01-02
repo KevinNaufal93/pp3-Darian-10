@@ -31,5 +31,5 @@ app.use("/tm", superAdminRouter);
 app.use("/ts", superAdminRouter);
 
 
-app.listen(port, () => `Server running in port ${port}`);
+app.listen(port, () => console.log(`Server running in port`, port));
 //running nya pakai npx nodemon index.js
