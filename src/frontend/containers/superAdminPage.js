@@ -37,6 +37,13 @@ class Register extends React.Component {
         this.setState({ [name]: value })
     }
 
+    handleKeyPress = e => {
+        if (e.key === 'Enter') {
+            alert('Enter pressed')
+            //this.props.confirmAdd(this.state)
+        }
+    }
+
     render () {
         console.log(this.state)
 
@@ -71,7 +78,7 @@ class Register extends React.Component {
                             <input type="date" name="deadline" placeholder="Due Date of Project" onChange={this.inputHandler}/>             
                         </div>
                         <div className="pp3__button-container">
-                        <button onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
+                        <button type="submit" onKeyPress={(e)=>{this.handleKeypress(e)}} onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
                         </div>
                     </div>
                 </div>

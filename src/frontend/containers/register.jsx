@@ -41,6 +41,12 @@ class Register extends React.Component {
         }
     }
 
+    handleKeypress = (e) => {
+        if (e.keyCode === 13) {
+            this.passwordChecker()
+        }
+      }
+
     render () {
         
         const { redirect } = this.state;
@@ -78,7 +84,7 @@ class Register extends React.Component {
                         <input type="text" name="referral_code" placeholder="REFERRAL CODE" onChange={this.inputHandler}/>           
                     </div>
                     <div className="pp3__button-container">
-                    <button onClick={()=>{this.passwordChecker()}}>Register</button>
+                    <button type="submit" onKeyPress={this.handleKeypress} onClick={()=>{this.passwordChecker()}}>Register</button>
                 </div>
                 </div>
 

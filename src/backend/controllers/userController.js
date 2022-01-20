@@ -1,12 +1,13 @@
 const { db } = require('../database');
 const { createToken } = require('../helper/createToken')
+const Crypto = require('crypto');
 
 module.exports = {
 
     registerUser: (req, res) => {
         let { username, email, password, fullname } = req.body
         console.log(`Connecting to register API success, user email is ${req.body.email}`)
-        //password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
+        password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
         let insertQuery = `Insert into user (username, email, password, fullname, auth_status) values (
         ${db.escape(username)},
         ${db.escape(email)},
@@ -25,6 +26,7 @@ module.exports = {
 
     loginUser: (req,res) => {
         let { username, password } = req.body;
+        req.body.password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
         console.log(`logging in into ${req.body.username} account'`)
         let scriptQuery = `SELECT * FROM user WHERE username = ${db.escape(req.body.username)} AND password = ${db.escape(req.body.password)}`;
         db.query(scriptQuery, (err, result) => {

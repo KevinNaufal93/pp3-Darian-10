@@ -60,6 +60,13 @@ class TaskManager extends React.Component {
               console.log(err);
             });
           };
+
+          handleKeypress = (e) => {
+            if (e.keyCode === 13) {
+                this.props.updateOrderStatus(this.state)
+                this.refreshPage()
+            }
+        }
       
 
     renderSearchTask = () => {
@@ -81,7 +88,7 @@ class TaskManager extends React.Component {
                                 <input className="selector" name="order_status" type="radio" value="started"  defaultChecked={this.state.order_status === "started"} onChange={this.inputHandler} />   
                                 </span>
                             </div>
-                            <button onClick={()=>{this.props.updateOrderStatus(this.state);this.refreshPage()}}>Update</button>
+                            <button type="submit" onKeyPress={this.handleKeypress} onClick={()=>{this.props.updateOrderStatus(this.state);this.refreshPage()}}>Update</button>
                         </div>
 
                     )

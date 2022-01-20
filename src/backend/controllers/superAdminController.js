@@ -73,7 +73,7 @@ module.exports = {
 
     updateOrderStatus: (req,res) => {
         let { so, deadline, order_status } = req.body;
-        console.log(`API updating status for ${so}`)
+        console.log(`API updating status for ${so}, ${deadline}, ${order_status}`)
         let scriptQuery = `UPDATE order_db SET 
         deadline = ${db.escape(deadline)}, 
         order_status = ${db.escape(order_status)} 

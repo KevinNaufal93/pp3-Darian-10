@@ -34,8 +34,8 @@ class ViewTask extends React.Component {
             console.log(this.props.userGlobal.tasks.deadline)
             return this.props.userGlobal.tasks.sort(function(a,b){
                 console.log(a.deadline)
-                var c = new Date(a.deadline.replace(/-/g, '\/').replace(/T.+/, ''));
-                var d = new Date(b.deadline.replace(/-/g, '\/').replace(/T.+/, ''));
+                var c = new Date(a.deadline.replace(/-/g, '/').replace(/T.+/, ''));
+                var d = new Date(b.deadline.replace(/-/g, '/').replace(/T.+/, ''));
                 return c - d
             }).map((val) => {
                 
@@ -166,7 +166,7 @@ class ViewTask extends React.Component {
                                     <th scope="col">Produk</th>
                                     <th scope="col">Design</th>
                                     <th scope="col">Potong</th>
-                                    <th scope="col">Press</th>
+                                    <th scope="c Col">Press</th>
                                     <th scope="col">Sablon</th>
                                     <th scope="col">Bordir</th>
                                     <th scope="col">Jahit</th>

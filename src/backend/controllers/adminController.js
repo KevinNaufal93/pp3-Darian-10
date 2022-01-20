@@ -9,6 +9,7 @@ getTask: (req,res) => {
             res.send(err)
         }
         if (result.length > 0) {
+            console.log(result)
             res.send(result)
         } else {
             res.send({ message: "Wrong username or password" })

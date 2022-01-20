@@ -57,6 +57,11 @@ class TaskManager extends React.Component {
               console.log(err);
             });
           };
+
+    handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+        this.props.confirmAdd(this.state)
+    }}
       
 
     renderSearchTask = () => {
@@ -182,7 +187,7 @@ class TaskManager extends React.Component {
                             </div>
                         </td> */}
                         <td style={{borderWidth:"1px", borderColor:"#fff", borderStyle:'solid'}}>
-                            <button onClick={()=>{this.props.updateOrder(this.state)}}>Update</button>
+                            <button type="submit" onClick={()=>{this.props.updateOrder(this.state)}}>Update</button>
                         </td>
                     </tr>
                     )

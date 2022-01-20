@@ -2,7 +2,7 @@ import Axios from "axios";
 import { API_URL } from "../../constants/API";
 
 export const confirmAdd = (data) => {
-    //console.log(data);
+    console.log(data);
     return (dispatch) => {
       Axios.post(API_URL + "/sam/", {
         so: data.so,

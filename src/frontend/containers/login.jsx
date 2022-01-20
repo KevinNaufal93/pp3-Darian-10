@@ -22,6 +22,13 @@ class Login extends React.Component {
         console.log(this.state)
     }
 
+    handleKeypress = (e) => {
+        if (e.keyCode === 13) {
+            this.props.confirmLog(this.state) 
+            this.redirectHandler()
+        }
+      }
+
     render () {
 
         const { redirect } = this.state;
@@ -41,7 +48,7 @@ class Login extends React.Component {
                         <input type="password" name="password" placeholder="PASSWORD" onChange={this.inputHandler}></input>                
                     </div>
                     <div className="pp3__button-container">
-                    <button onClick={()=>{this.props.confirmLog(this.state) ; this.redirectHandler()}}>LOG IN</button>
+                    <button type="submit" onKeyPress={this.handleKeypress} onClick={()=>{this.props.confirmLog(this.state) ; this.redirectHandler()}}>LOG IN</button>
                     </div>
                 </div>
                 </div>
